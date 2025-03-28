@@ -1,6 +1,6 @@
 {
-  "name": "gateio-api",
-  "version": "1.1.5",
+  "name": "gateio-api-nw",
+  "version": "1.0.0",
   "description": "Complete & robust Node.js SDK for Gate.io's REST APIs, WebSockets & WebSocket APIs, with TypeScript declarations.",
   "scripts": {
     "clean": "rm -rf dist/*",
@@ -21,10 +21,7 @@
   "files": [
     "dist/*"
   ],
-  "author": "Tiago Siebler (https://github.com/tiagosiebler)",
-  "contributors": [
-    "Jerko J (https://github.com/JJ-Cro)"
-  ],
+  "author": "https://github.com/little-fish-foundation/gateio-api-nw",
   "dependencies": {
     "axios": "^1.6.6",
     "isomorphic-ws": "^4.0.1",
@@ -71,17 +68,13 @@
     "bitcoin",
     "best"
   ],
-  "funding": {
-    "type": "individual",
-    "url": "https://github.com/sponsors/tiagosiebler"
-  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiagosiebler/gateio-api"
+    "url": "https://github.com/little-fish-foundation/gateio-api-nw"
   },
   "bugs": {
-    "url": "https://github.com/tiagosiebler/gateio-api/issues"
+    "url": "https://github.com/little-fish-foundation/gateio-api-nw/issues"
   },
-  "homepage": "https://github.com/tiagosiebler/gateio-api#readme"
+  "homepage": "https://github.com/little-fish-foundation/gateio-api-nw#readme"
 }

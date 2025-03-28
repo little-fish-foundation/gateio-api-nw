@@ -1,78 +1,8 @@
 # Node.js & JavaScript SDK for Gate.io REST APIs, WebSockets & WebSocket API
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/gateio-api">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/tiagosiebler/gateio-api/blob/master/docs/images/logoDarkMode2.svg?raw=true#gh-dark-mode-only">
-      <img alt="SDK Logo" src="https://github.com/tiagosiebler/gateio-api/blob/master/docs/images/logoBrightMode2.svg?raw=true#gh-light-mode-only">
-    </picture>
-  </a>
-</p>
-
-[![npm version](https://img.shields.io/npm/v/gateio-api)][1]
-[![npm size](https://img.shields.io/bundlephobia/min/gateio-api/latest)][1]
-[![npm downloads](https://img.shields.io/npm/dt/gateio-api)][1]
-[![Build & Test](https://github.com/tiagosiebler/gateio-api/actions/workflows/e2etest.yml/badge.svg?branch=master)](https://github.com/tiagosiebler/gateio-api/actions/workflows/e2etest.yml)
-[![last commit](https://img.shields.io/github/last-commit/tiagosiebler/gateio-api)][1]
-[![Telegram](https://img.shields.io/badge/chat-on%20telegram-blue.svg)](https://t.me/nodetraders)
-
-[1]: https://www.npmjs.com/package/gateio-api
-
-Updated & performant JavaScript & Node.js SDK for the Gate.io REST APIs and WebSockets:
-
-- Extensive integration with Gate.io REST APIs and WebSockets.
-- TypeScript support (with type declarations for most API requests & responses).
-- Gate.io REST APIs for Gate.io Spot, Margin, Perpetual Futures, Delivery Futures, Options & Announcements APIs.
-  - Strongly typed on most requests and responses.
-- Extremely robust & performant JavaScript/Node.js Gate.io SDK.
-- Actively maintained with a modern, promise-driven interface.
-- Support for seamless API authentication for private Gate.io REST API and WebSocket calls.
-- Gate.io Spot, Margin, Perpetual Futures, Delivery Futures & Options.
-  - Event driven messaging.
-  - Smart websocket persistence
-    - Automatically handle silent websocket disconnections through timed heartbeats, including the scheduled 24hr disconnect.
-    - Automatically handle listenKey persistence and expiration/refresh.
-    - Emit `reconnected` event when dropped connection is restored.
-- Websocket API for Gate.io Spot, Margin, Perpetual Futures & Delivery Futures.
-  - Automatic connectivity via existing WebsocketClient, just call sendWSAPIRequest to trigger a request.
-  - Automatic authentication, just call sendWSAPIRequest with channel & parameters.
-  - Choose between two interfaces for WS API communication:
-    - Event-driven interface, fire & forget via sendWSAPIRequest and receive async replies via wsClient's event emitter.
-    - Promise-driven interface, simply call and await sendWSAPIRequest for a REST-API-like behaviour with the WS API.
-- Proxy support via axios integration.
-- Active community support & collaboration in telegram: [Node.js Algo Traders](https://t.me/nodetraders).
-
 ## Installation
 
-`npm install --save gateio-api`
-
-## Issues & Discussion
-
-- Issues? Check the [issues tab](https://github.com/tiagosiebler/gateio-api/issues).
-- Discuss & collaborate with other node devs? Join our [Node.js Algo Traders](https://t.me/nodetraders) engineering community on telegram.
-- Follow our announcement channel for real-time updates on [X/Twitter](https://x.com/QuantSDKs)
-
-<!-- template_related_projects -->
-
-## Related projects
-
-Check out my related JavaScript/TypeScript/Node.js projects:
-
-- Try my REST API & WebSocket SDKs:
-  - [Bybit-api Node.js SDK](https://www.npmjs.com/package/bybit-api)
-  - [Okx-api Node.js SDK](https://www.npmjs.com/package/okx-api)
-  - [Binance Node.js SDK](https://www.npmjs.com/package/binance)
-  - [Gateio-api Node.js SDK](https://www.npmjs.com/package/gateio-api)
-  - [Bitget-api Node.js SDK](https://www.npmjs.com/package/bitget-api)
-  - [Kucoin-api Node.js SDK](https://www.npmjs.com/package/kucoin-api)
-  - [Coinbase-api Node.js SDK](https://www.npmjs.com/package/coinbase-api)
-  - [Bitmart-api Node.js SDK](https://www.npmjs.com/package/bitmart-api)
-- Try my misc utilities:
-  - [OrderBooks Node.js](https://www.npmjs.com/package/orderbooks)
-  - [Crypto Exchange Account State Cache](https://www.npmjs.com/package/accountstate)
-- Check out my examples:
-  - [awesome-crypto-examples Node.js](https://github.com/tiagosiebler/awesome-crypto-examples)
-  <!-- template_related_projects_end -->
+`npm install gateio-api-nw`
 
 ## Documentation
 
@@ -102,7 +32,7 @@ Create API credentials
 To use any of Gate.io's REST APIs in JavaScript/TypeScript/Node.js, import (or require) the `RestClient`:
 
 ```javascript
-const { RestClient } = require('gateio-api');
+const { RestClient } = require('gateio-api-nw');
 
 const API_KEY = 'xxx';
 const PRIVATE_KEY = 'yyy';
@@ -145,7 +75,7 @@ Any subscribe/unsubscribe events will need to include a WsKey, so the WebSocket 
 Data events are emitted from the WebsocketClient via the `update` event, see example below:
 
 ```javascript
-const { WebsocketClient } = require('gateio-api');
+const { WebsocketClient } = require('gateio-api-nw');
 
 const API_KEY = 'xxx';
 const PRIVATE_KEY = 'yyy';
@@ -265,7 +195,7 @@ The [WebsocketClient](./src/WebsocketClient.ts) supports this exchange's Websock
 The below example demonstrates the promise-driven approach, which behaves similar to a REST API. For more detailed examples, refer to the [examples](./examples/) folder (e.g the [ws-private-spot-wsapi.ts](./examples/ws-private-spot-wsapi.ts) example).
 
 ```javascript
-const { WebsocketClient } = require('gateio-api');
+const { WebsocketClient } = require('gateio-api-nw');
 
 const API_KEY = 'xxx';
 const PRIVATE_KEY = 'yyy';
@@ -360,7 +290,7 @@ start();
 Pass a custom logger which supports the log methods `silly`, `debug`, `notice`, `info`, `warning` and `error`, or override methods from the default logger as desired.
 
 ```javascript
-const { WebsocketClient, DefaultLogger } = require('gateio-api');
+const { WebsocketClient, DefaultLogger } = require('gateio-api-nw');
 
 // Disable all logging on the silly level
 DefaultLogger.silly = () => {};
@@ -369,36 +299,7 @@ const ws = new WebsocketClient({ key: 'xxx', secret: 'yyy' }, DefaultLogger);
 ```
 
 ---
+npm login --registry=https://registry.npmjs.org/
 
-<!-- template_contributions -->
+npm publish --registry=https://registry.npmjs.org/
 
-### Contributions & Thanks
-
-Have my projects helped you? Share the love, there are many ways you can show your thanks:
-
-- Star & share my projects.
-- Are my projects useful? Sponsor me on Github and support my effort to maintain & improve them: https://github.com/sponsors/tiagosiebler
-- Have an interesting project? Get in touch & invite me to it.
-- Or buy me all the coffee:
-  - ETH(ERC20): `0xA3Bda8BecaB4DCdA539Dc16F9C54a592553Be06C` <!-- metamask -->
-
-<!---
-old ones:
-  - BTC: `1C6GWZL1XW3jrjpPTS863XtZiXL1aTK7Jk`
-  - BTC(SegWit): `bc1ql64wr9z3khp2gy7dqlmqw7cp6h0lcusz0zjtls`
-  - ETH(ERC20): `0xe0bbbc805e0e83341fadc210d6202f4022e50992`
-  - USDT(TRC20): `TA18VUywcNEM9ahh3TTWF3sFpt9rkLnnQa
--->
-<!-- template_contributions_end -->
-
-### Contributions & Pull Requests
-
-Contributions are encouraged, I will review any incoming pull requests. See the issues tab for todo items.
-
-<!-- template_star_history -->
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=tiagosiebler/bybit-api,tiagosiebler/okx-api,tiagosiebler/binance,tiagosiebler/bitget-api,tiagosiebler/bitmart-api,tiagosiebler/gateio-api,tiagosiebler/kucoin-api,tiagosiebler/coinbase-api,tiagosiebler/orderbooks,tiagosiebler/accountstate,tiagosiebler/awesome-crypto-examples&type=Date)](https://star-history.com/#tiagosiebler/bybit-api&tiagosiebler/okx-api&tiagosiebler/binance&tiagosiebler/bitget-api&tiagosiebler/bitmart-api&tiagosiebler/gateio-api&tiagosiebler/kucoin-api&tiagosiebler/coinbase-api&tiagosiebler/orderbooks&tiagosiebler/accountstate&tiagosiebler/awesome-crypto-examples&Date)
-
-<!-- template_star_history_end -->
