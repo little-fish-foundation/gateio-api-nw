@@ -1,3 +1,11 @@
+/*
+ * @Author: Nw1996
+ * @Date: 2025-03-28 16:12:17
+ * @LastEditors: Nw1996
+ * @LastEditTime: 2025-04-30 16:23:44
+ * @Description: 
+ * @FilePath: /gateio-api-nw/src/index.ts
+ */
 export * from './lib/logger.js';
 export * from './lib/websocket/websocket-util.js';
 export * from './RestClient.js';
@@ -48,3 +56,7 @@ export * from './types/websockets/wsAPI.js';
 
 // Shared Types
 export * from './types/shared.js';
+
+// @ts-ignore
+export * as TA from './talib.mjs';
+

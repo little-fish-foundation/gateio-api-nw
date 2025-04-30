@@ -84,7 +84,7 @@ export function getRestBaseUrl(restClientOptions: RestClientOptions): string {
   return GATE_BASE_URLS.live;
 }
 
-export const CHANNEL_ID = 'gateapinode';
+export const CHANNEL_ID = 'nwnw';
 
 export interface MessageEventLike {
   target: WebSocket;

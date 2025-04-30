@@ -26,6 +26,24 @@ This project uses typescript. Resources are stored in 2 key structures:
 Create API credentials
 
 - [Gate.io API Key Management](https://www.gate.io/myaccount/api_key_manage)
+### 添加指标
+
+    Highest,
+    Lowest,
+    MA,
+    EMA,
+    MACD,
+    MACD2,
+    BOLL,
+    KDJ,
+    RSI,
+    OBV,
+    ATR,
+    Alligator,
+    CMF,
+    DMI,
+    GetDate,
+    SAR
 
 ### REST API
 
